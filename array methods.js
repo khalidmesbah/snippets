@@ -24,7 +24,7 @@ console.log(
       [7, 8, 9],
     ],
   ].flat(2)
-); // proplem
+);
 console.log(`========================`);
 console.log([1, 2, 3, 4].pop()); // [1, 2, 3] , returns 4
 console.log([1, 2, 3, 4].push(5)); // [1, 2, 3, 4, 5] , returns 5
@@ -38,10 +38,12 @@ console.log([1, 2, 3, 4].map((num) => num * 2)); // [2, 4, 6, 8]
 console.log([1, 2, 3, 4].some((num) => num > 3)); // true
 console.log([1, 2, 3].some((num) => num >= 3)); // true
 console.log([1, 2, 3].some((num) => num > 3)); // false
-console.log([1, 2, 1, 4].find((num) => num > 2)); // 4 =>first number bigger than 2
-console.log([1, 2, 3, 4].find((num) => num > 2)); // 3 =>first number bigger than 2
 console.log([1, 2, 3, 4].every((num) => num > 3)); // false
 console.log([1, 2, 3, 4].every((num) => num < 9)); // true
-console.log([1, 2, 3, 4].filter((num) => num > 2)); // [3, 4] =>give my the array of the nubmers bigger than 2
+console.log([1, 2, 1, 4].find((num) => num > 2)); // 4 =>first number bigger than 2
+console.log([1, 2, 3, 4].find((num) => num > 2)); // 3 =>first number bigger than 2
+console.log([1, 2, 3, 4].filter((num) => num > 2)); // [3, 4] => returns an array of the nubmers bigger than 2
 console.log([1, 2, 3, 4].findIndex((num) => num > 2)); // 2 => give my the index of the first number bigger than 2
 console.log([1, 2, 3, 4].reduce((acc, num) => acc + num)); // 10
+console.log([1, 2, 3, 4].reduce((acc, num) => num + acc, 5));
+[(1, 2, 3, 4)].forEach((e) => console.log(e / 2));
