@@ -7,3 +7,8 @@ function rmDublicates(arr, len) {
 }
 rmDublicates(arr, arr.length);
 console.log(set);
+
+// or
+console.log(
+  Array.from(new Set([1, 2, 3, 1, 1, 2, 4, 5, 5, 6, 7, 7, 7, 7, 7, 7]))
+);
