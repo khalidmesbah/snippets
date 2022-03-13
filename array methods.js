@@ -47,3 +47,17 @@ console.log([1, 2, 3, 4].findIndex((num) => num > 2)); // 2 => give my the index
 console.log([1, 2, 3, 4].reduce((acc, num) => acc + num)); // 10
 console.log([1, 2, 3, 4].reduce((acc, num) => num + acc, 5));
 [(1, 2, 3, 4)].forEach((e) => console.log(e / 2));
+console.log(
+  [
+    "Lawyer",
+    "Doctor",
+    "Programmer",
+    "Chef",
+    "Store Manager",
+    "Camera man",
+  ].find((e) => e.startsWith("C"))
+); // returns the first element that sa tisfies the conditions
+// remove array dublicates
+console.log(
+  Array.from(new Set([1, 2, 3, 1, 1, 2, 4, 5, 5, 6, 7, 7, 7, 7, 7, 7]))
+);
