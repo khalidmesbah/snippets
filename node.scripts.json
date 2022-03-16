@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess 'node ./dist/server.js'"
+    }
+}
