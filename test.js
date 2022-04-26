@@ -1,3 +1,16 @@
+/* 
+ + var 
+  - global => anywhere else
+  - local => inside a function
+ + let
+  - local =>When you declare a variable with the let keyword inside
+   a block, statement, or expression,
+   its scope is limited to 
+   that block, statement, or expression.
+ + const
+  - 
+*/
+
 // 1 global scope
 /* // Declare the myGlobal variable below this line
 const myGlobal = 10;
@@ -41,26 +54,55 @@ function myFun() {
 }
 console.log(myFun()) */
 // 4
-function rangeOfNumbers(startNum, endNum) {
-  // 1
-  // if (startNum === endNum + 1) return [];
-  // return [startNum].concat(rangeOfNumbers(++startNum, endNum));
-  // 2
-  // return startNum === endNum
-  // ? [startNum]
-  // : [startNum].concat(rangeOfNumbers(++startNum, endNum));
-  // 3
-  // return startNum === endNum + 1
-  // ? []
-  // : [startNum].concat(rangeOfNumbers(++startNum, endNum));
-  // 4
-  // return startNum === endNum
-  // ? [startNum]
-  // : [...rangeOfNumbers(startNum, endNum - 1), endNum];
-  // 5
-  return startNum === endNum
-    ? [startNum]
-    : [startNum, ...rangeOfNumbers(++startNum, endNum)];
+// -  When you declare a variable with the var keyword,
+// it is declared globally, or locally if declared inside a function.
+// {
+// var k = 1;
+// }
+// function fun() {
+// var l = 1;
+// }
+// console.log(k);
+// console.log(l);
+/* 
+ When you declare a variable with the let keyword inside a block, statement, or expression,
+ its scope is limited to that block, statement, or expression. 
+*/
+
+/* {
+  let k = 1;
 }
-console.log(rangeOfNumbers(1, 10));
-console.log(rangeOfNumbers(10, 10));
+function fun() {
+  let l = 1;
+}
+console.log(k);
+console.log(l);
+ */
+/* var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray);
+console.log(i);
+
+var numArray = [];
+for (let j = 0; j < 3; j++) {
+  numArray.push(j);
+}
+console.log(numArray);
+console.log(j);
+ */
+
+// var printNumTwo;
+// for (let i = 0; i < 3; i++) {
+//   /* printNumTwo() returned the correct value because three different i variables
+//    with unique values (0, 1, and 2) were created
+//    by the let keyword within the loop statement. */
+//   if (i === 2) {
+//     printNumTwo = function () {
+//       return i;
+//     };
+//   }
+// }
+// console.log(printNumTwo());
+// console.log(i);
