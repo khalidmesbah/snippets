@@ -1,3 +1,22 @@
+/* 
+Objects 
+- hasOwnProperty
+- for(let user in users<the object>) console.log(user)
+- Object.keys
+- for (let user in usersObj) if (usersObj[user]["online"])count++;
+- delete object key
+- modify, remove, add key-value pairs
+- tekkenCharacter.origin = 'South Korea';
+
+*/
+
+
+
+
+
+
+
+
 /* - Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
 - we can use bracket notation to access a property when it's name is a string that contains a whitespace,
  Another use of bracket notation on objects is to access a property which is stored as the value of a variable.
@@ -42,3 +61,30 @@ console.log(checkObj(obj, 1));
 obj.arr=[];
 obj.arr.push("loda")
 console.log(obj)
+
+/* good for problem solving
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  let count = 0;
+  for (let user in usersObj) {
+    if (usersObj[user]["online"])
+      count++;
+  }
+  return count
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+*/
