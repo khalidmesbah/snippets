@@ -7,6 +7,8 @@ Objects
 - delete object key
 - modify, remove, add key-value pairs
 - tekkenCharacter.origin = 'South Korea';
+- dot notation
+- object notation
 
 */
 

@@ -18,7 +18,7 @@
 */
 console.log(`🚀🔥👉 ⚡ null == undefined`, null == undefined);
 console.log(`🚀🔥👉 ⚡ true == 5`, true == 5);
-// compare the addresses of the two arrays not the values & of course they are differnt
+// compare the addresses of the two arrays not the values & of course they are different
 console.log(`🚀🔥👉 ⚡ [] == []`, [] == []);
 let x = [];
 // same addresses

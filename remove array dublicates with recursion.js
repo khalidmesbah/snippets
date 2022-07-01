@@ -1,11 +1,11 @@
 let arr = [1, 2, 3, 1, 1, 2, 4, 5, 5, 6, 7, 7, 7, 7, 7, 7];
 let set = [];
-function rmDublicates(arr, len) {
+function rmDuplicates(arr, len) {
   if (--len === 0) return set.sort();
   if (!set.includes(arr[len])) set.push(arr[len]);
-  return rmDublicates(arr, len);
+  return rmDuplicates(arr, len);
 }
-rmDublicates(arr, arr.length);
+rmDuplicates(arr, arr.length);
 console.log(set);
 
 // or
