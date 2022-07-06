@@ -62,6 +62,17 @@ console.log(
   Array.from(new Set([1, 2, 3, 1, 1, 2, 4, 5, 5, 6, 7, 7, 7, 7, 7, 7]))
 );
 
+console.log(`----------spread operator----------`)
+// extremely useful when adding more elements between arrays
 // array copy with spread operator
 const nums = [1, 2, 3, 4, 5];
+// const numsCopy = nums; // when you modify the numsCopy the original copy will be modified too  
 const numsCopy  = [...nums];
+// nums.pop()
+console.log(numsCopy, nums)
+// array combine with spread operator
+const nums1 = [1,2,3]
+const nums2 = [4,5,6]
+// const combined = nums1.concat(nums2) // concat method
+const combined = ['firstArr',...nums1,'middle',...nums2,'secondArr']
+// console.log(combined)

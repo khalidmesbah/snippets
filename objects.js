@@ -1,6 +1,7 @@
 /* 
 Objects 
-- hasOwnProperty
+- almost every thing in javascript is an object
+- hasOwnProperty => checks if the property is in the object itself not in the prototype
 - for(let user in users<the object>) console.log(user)
 - Object.keys
 - for (let user in usersObj) if (usersObj[user]["online"])count++;
@@ -9,14 +10,8 @@ Objects
 - tekkenCharacter.origin = 'South Korea';
 - dot notation
 - object notation
-
+- the best functions are those with no parameters
 */
-
-
-
-
-
-
 
 
 /* - Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
@@ -29,40 +24,9 @@ const obj = {
   name: "khaled",
   age: 21,
   "college & university": "faculty of science, sohag university",
-  qoute: "work hard",
+  quote: "work hard",
 };
-// name: "khaled" => property = key + value 
-// name => key
-// "khaled" =>value
-const prop = "name";
-// dot notation
-console.log(obj.name);
-console.log(obj.age);
-// bracket notation
-console.log(obj[1]);
-console.log(obj["1"]);
-console.log(obj["qoute"]);
-console.log(obj["college & university"]);
-console.log(obj[prop]);
-// modify a property
-obj.name = "Khalid";
-console.log(obj);
-// add a new property
-obj.newProp = "new";
-console.log(obj);
-// delete a property
-delete obj.newProp;
-console.log(obj);
-// hasOwnProperty
-function checkObj(obj, checkProp) {
-  // Only change code below this line
-  return obj.hasOwnProperty(checkProp) ? obj[checkProp] : "Not Found";
-  // Only change code above this line
-}
-console.log(checkObj(obj, 1));
-obj.arr=[];
-obj.arr.push("loda")
-console.log(obj)
+
 
 /* good for problem solving
 const users = {
@@ -90,3 +54,195 @@ function countOnline(usersObj) {
 
 console.log(countOnline(users));
 */
+
+/* Ways to create objects */
+/* 
+1 - object literal
+let employee = {
+  baseSalary:3000,
+  rate:20,  
+  getWage:function(){
+    return this.baseSalary * this.rate;
+  }
+}
+2 - factories
+3 - constructor functions
+4 - new Object , {}
+5 - classes
+
+*/
+// object literal
+const car_objectLiteral = {
+  name: 'loda',
+  model: 2002,
+  color: 'silver'
+};
+// factory
+function createCar(name, model, color) {
+  return {
+    name,
+    model,
+    color,
+    start: function () {
+      console.log(`${name} is starting`);
+    },
+    stop: function () {
+      console.log(`${name} is stopping`);
+    }
+  };
+}
+const car_factory = createCar('loda', 2002, 'silver');
+// constructor function
+// any thing uses the new keyword is a constructor function
+function Car(name, model, color) {
+  let _tyres = 4;
+  // private property
+  Object.defineProperty(this, `tyres`, {
+    get: function () {
+      return _tyres;
+    }
+  });
+  Object.defineProperty(this, `test`, {
+    configurable: false, // can't be deleted
+    writeable: false, // can't be reassigned
+    enumerable: false, //
+    value: 10
+  });
+  this.name = name;
+  this.model = model;
+  this.color = color;
+
+}
+Car.prototype.start = function () {
+  console.log(`${this.name} is starting`);
+};
+Car.prototype.stop = function () {
+  console.log(`${this.name} is stopping`);
+};
+const tesla = new Car(`tesla`, 2012, `green`);
+tesla.test = `loda`;
+// console.log(tesla.test);
+// for (let key in tesla) {
+//   if (tesla.hasOwnProperty(key)) // if you want to exclude the prototype methods and properties
+//     console.log(key);
+// }
+// the functions inside the objects made with the constructor function are made for each object which is a waste of memory
+// => so we add the (functions or the data) which will be the same for every/most object/s to the prototype of the constructor function 
+// the methods or data that will be the same for every object we add it to the prototype of the constructor function
+// note: you can't use the arrow function with the prototype because `this` will refer to something else
+/* 
+Car.prototype.stop = function () {
+  console.log(`${this.name} is stopping`);
+};
+ */
+const car_constructorFunction = new Car('loda', 2002, 'silver');
+/* constructorFunction.prototype VS instance.__proto__ */
+// prototype === __proto__ except that (prototype => constructorFunction) and (__proto__ => instances)
+// console.log(car_constructorFunction.__proto__)
+// console.log(Car.prototype)
+
+/* Array is a constructor function with one property which is length and a lot of functions in it's prototype*/
+// [] is a replacement for new Array
+// console.log(new Array , [])
+// let arr = new Array();
+// console.log(Array.prototype === arr.__proto__) // true
+
+/* Object is a constructor function  */
+// {} is a replacement for new Object
+// console.log(new Object , {})
+// let test = new Object({ 'khaled': 1, 'loda': 2, 'coco': 3 });
+// console.log(test);
+
+/* Function is a constructor function */
+// const fun = new Function(`p`, `console.log(p)`);
+// fun('khaled');
+
+
+/* inheritance */
+
+function Lancer(name, model, color, maxSpeed) { // this is a class
+  this.name = name;
+  this.model = model;
+  this.color = color;
+  this.maxSpeed = maxSpeed;
+}
+// Lancer.prototype = Car.prototype // is wrong because if you add functions to the Lancer.prototype they will be overwritten by the Car.prototype
+
+Lancer.prototype = Object.create(Car.prototype); // this is prototype inheritance
+Lancer.prototype.constructor = Lancer; //  to make the Lancer prototype to have its own constructor
+function inherit(child, parent) { // a helper function 
+  child.prototype = Object.create(parent.prototype);
+  child.prototype.constructor = child;
+}
+const merage = new Lancer('merage', 2002, 'red', 454);
+// console.log(merage.tyres); // doesn't work
+
+
+// functions can be used to create objects by adding the new keyword before them which are known as constructor functions
+// the new keyword before a functions executes the functions as a constructor function to make objects  
+
+
+
+/* let in VS let of */
+// let of doesn't work with objects because they are not iterable
+// let arr = {
+//   'k': 1, 'h': 2, 'a': 3, 'l': 4, 'e': 5, 'd': 6
+// };
+// for (let key in arr) {
+//   console.log(key);
+// }
+
+// classes // same as constructor functions
+/* 
+- the functions are already in the prototype directly
+- 
+*/
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  run() {
+    console.log(`${this.name} is running`);
+  }
+}
+class Child extends Person {
+  // not supported yet
+  /*   #eyeColor = 'red'; // private property
+    // get the eyeColor 
+    get eyeColor(){
+      return this.#eyeColor 
+    } */
+  constructor(name, age, gender) {
+    super(name, age); // call the constructor of the parent
+    this.gender = gender;
+  }
+  walk() {
+    console.log(`child ${this.name} is walking`);
+  }
+}
+const child = new Child(`osama`, 15, `male`);
+
+
+
+/* object destructuring */
+const address = {
+  street: '15',
+  city: 'sohag',
+  country: ''
+};
+
+const { street: s, city: c } = address;
+// console.log(s, c);
+
+
+/* spread operator*/
+// spread operator to clone an object
+// const sameAddress = address // modifying the original object will not affect the cloned object
+const sameAddress = {...address} // modifying the original object will not affect the cloned object
+// delete address.country 
+// console.log(sameAddress , address)
+
+// spread operator to combine too objects
+const combined = { ...address, ...car_objectLiteral,newProperty : 'I Am New??' };
+// console.log(address, car_objectLiteral, combined);
