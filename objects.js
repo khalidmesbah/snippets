@@ -11,6 +11,10 @@ Objects
 - dot notation
 - object notation
 - the best functions are those with no parameters
+- prototype property belongs only to constructor functions / classes
+- __proto__: a property for every variable that points to the parent object it inherits from
+- prototype: a property for constructor functions(classes) that contains all the stuff that will be inherited by its instances
+- new Person('param1') => object instantiation
 */
 
 
@@ -42,7 +46,7 @@ const users = {
 }
 
 function countOnline(usersObj) {
-  // Only change code below this line
+  // Only change code below this line 
   let count = 0;
   for (let user in usersObj) {
     if (usersObj[user]["online"])
@@ -67,8 +71,11 @@ let employee = {
 }
 2 - factories
 3 - constructor functions
-4 - new Object , {}
-5 - classes
+4 - classes
+5 - new Object
+6 - {}
+7 - object.create({})
+
 
 */
 // object literal
@@ -78,6 +85,11 @@ const car_objectLiteral = {
   color: 'silver'
 };
 // factory
+/* 
+  - simple
+  - no duplicates
+  - data privacy
+*/
 function createCar(name, model, color) {
   return {
     name,
@@ -91,7 +103,10 @@ function createCar(name, model, color) {
     }
   };
 }
-const car_factory = createCar('loda', 2002, 'silver');
+const car_factory = createCar('loda', 2002, 'silver'); // you cant change its properties or functions unlike literal objects
+car_factory.name = `king`;
+console.log(car_factory.prototype);
+
 // constructor function
 // any thing uses the new keyword is a constructor function
 function Car(name, model, color) {
@@ -239,10 +254,43 @@ const { street: s, city: c } = address;
 /* spread operator*/
 // spread operator to clone an object
 // const sameAddress = address // modifying the original object will not affect the cloned object
-const sameAddress = {...address} // modifying the original object will not affect the cloned object
+const sameAddress = { ...address }; // modifying the original object will not affect the cloned object
 // delete address.country 
 // console.log(sameAddress , address)
 
 // spread operator to combine too objects
-const combined = { ...address, ...car_objectLiteral,newProperty : 'I Am New??' };
+const combined = { ...address, ...car_objectLiteral, newProperty: 'I Am New??' };
 // console.log(address, car_objectLiteral, combined);
+
+
+
+/* inheriting using setPropertyOf */
+/* const Person23 = {
+  talk() {
+    return `talking`;
+  }
+};
+const me = new Object();
+// console.log(me.talk());
+Object.setPrototypeOf(me, Person23);
+console.log(me.talk()); */
+
+/* inheriting using setPropertyOf */
+/* const Person232 = {
+  talk() {
+    return `talking`;
+  }
+};
+const me =Object.create(Person232);
+console.log(me.talk());
+ */
+
+
+
+// const pen = {
+//   name :`khaled`,
+//   talk(){
+//     return `${this.name} is talking`
+//   }
+// }
+// // console.log(pen.talk())
