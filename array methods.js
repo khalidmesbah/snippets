@@ -1,6 +1,8 @@
+console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].entries()])
+console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].keys()])
+console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].values()])
 console.log([1, 2, 3, 4].toLocaleString()); // 1,2,3,4
 console.log([1, 2, 3, 4].toString()); // 1,2,3,4
-console.log([1, 2, 3, 4].indexOf(2)); // 1
 console.log([1, 2, 3, 4].concat([5, 6, 7, 8])); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 console.log([1, 2, 3, 4].slice(0, 3)); // [ 1, 2, 3 ]
 console.log([1, 2, 3, 4].findIndex((num) => num == 2)); // 1
@@ -26,13 +28,13 @@ console.log(
   ].flat(2)
 );
 console.log(`========================`);
-console.log([1, 2, 3, 4].pop()); // [1, 2, 3] , returns 4
-console.log([1, 2, 3, 4].push(5)); // [1, 2, 3, 4, 5] , returns 5
+console.log([1, 2, 3, 4].pop()); // [1, 2, 3] , returns 4 => the removed value
+console.log([1, 2, 3, 4].shift()); // [2, 3, 4] , returns 1 => the removed value
+console.log([1, 2, 3, 4].push(5)); // [1, 2, 3, 4, 5] , returns 5=>the length of the array not the value of the pushed item
 console.log([1, 2, 3, 4].fill(1)); // [1, 1, 1, 1]
 console.log([1, 2, 3, 4].join("-")); // '1-2-3-4'
-console.log([1, 2, 3, 4].shift()); // [2, 3, 4] , returns 1
 console.log([1, 2, 3, 4].reverse()); // [4, 3, 2, 1]
-console.log([1, 2, 3, 4].unshift(1)); // [1, 1, 2, 3, 4] , returns 5 - length i guess
+console.log([1, 2, 3, 4].unshift(1)); // [1, 1, 2, 3, 4] , returns 5 => the length of the array
 console.log([1, 2, 3, 4].includes(2)); // true
 console.log([1, 2, 3, 4].map((num) => num * 2)); // [2, 4, 6, 8]
 console.log([1, 2, 3, 4].some((num) => num > 3)); // true
@@ -42,8 +44,10 @@ console.log([1, 2, 3, 4].every((num) => num > 3)); // false
 console.log([1, 2, 3, 4].every((num) => num < 9)); // true
 console.log([1, 2, 1, 4].find((num) => num > 2)); // 4 =>first number bigger than 2
 console.log([1, 2, 3, 4].find((num) => num > 2)); // 3 =>first number bigger than 2
-console.log([1, 2, 3, 4].filter((num) => num > 2)); // [3, 4] => returns an array of the nubmers bigger than 2
 console.log([1, 2, 3, 4].findIndex((num) => num > 2)); // 2 => give my the index of the first number bigger than 2
+console.log([1, 2, 3, 4].indexOf(2)); // 1
+console.log([1, 2, 3, 4, 2].lastIndexOf(2)); // 4
+console.log([1, 2, 3, 4].filter((num) => num > 2)); // [3, 4] => returns an array of the numbers bigger than 2
 console.log([1, 2, 3, 4].reduce((acc, num) => acc + num)); // 10
 console.log([1, 2, 3, 4].reduce((acc, num) => num + acc, 5));
 [(1, 2, 3, 4)].forEach((e) => console.log(e / 2));
@@ -56,23 +60,25 @@ console.log(
     "Store Manager",
     "Camera man",
   ].find((e) => e.startsWith("C"))
-); // returns the first element that sa tisfies the conditions
-// remove array dublicates
+); // returns the first element that satisfies the conditions
+// remove array duplicates
 console.log(
   Array.from(new Set([1, 2, 3, 1, 1, 2, 4, 5, 5, 6, 7, 7, 7, 7, 7, 7]))
 );
 
-console.log(`----------spread operator----------`)
+console.log(`----------spread operator----------`);
 // extremely useful when adding more elements between arrays
 // array copy with spread operator
 const nums = [1, 2, 3, 4, 5];
 // const numsCopy = nums; // when you modify the numsCopy the original copy will be modified too  
-const numsCopy  = [...nums];
+const numsCopy = [...nums];
 // nums.pop()
-console.log(numsCopy, nums)
+console.log(numsCopy, nums);
 // array combine with spread operator
-const nums1 = [1,2,3]
-const nums2 = [4,5,6]
+const nums1 = [1, 2, 3];
+const nums2 = [4, 5, 6];
 // const combined = nums1.concat(nums2) // concat method
-const combined = ['firstArr',...nums1,'middle',...nums2,'secondArr']
+const combined = ['firstArr', ...nums1, 'middle', ...nums2, 'secondArr'];
 // console.log(combined)
+
+console.log(`-----------------------`);
