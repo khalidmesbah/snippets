@@ -14,4 +14,8 @@ const isDarkMode =
   window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").match;
 console.log(isDarkMode); */
 
+/* // check if an element if focused
+const element = document.querySelector(`.someThing`);
+const isFocus = element == document.activeElement;
+ */
 

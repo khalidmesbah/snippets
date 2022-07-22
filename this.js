@@ -13,6 +13,9 @@
 - object method binding
 - in a function
 - in an event handler
+- method => this = current object
+- function => this = window object
+- func => this = window function
  */
 
 const person = {

@@ -9,3 +9,5 @@ console.log(Game_Stats);
 let gameState = Game_Stats.NOT_STARTED;
 gameState = Game_Stats.PLAYING;
 gameState = Game_Stats.FINISHED;
+console.log(gameState)
+

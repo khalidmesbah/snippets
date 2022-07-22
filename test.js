@@ -108,3 +108,10 @@ console.log(j);
 // console.log(i);
 
 
+// This is a JavaScript Quiz from BFE.dev 
+function func() {
+  const a = b = c = 1;
+}
+func();
+console.log(b, c);
+console.log(typeof a, typeof b, typeof c);

@@ -1,6 +1,6 @@
-console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].entries()])
-console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].keys()])
-console.log([...[`k`,`h`,`a`,`l`,`e`,`d`].values()])
+console.log([...[`k`, `h`, `a`, `l`, `e`, `d`].entries()]);
+console.log([...[`k`, `h`, `a`, `l`, `e`, `d`].keys()]);
+console.log([...[`k`, `h`, `a`, `l`, `e`, `d`].values()]);
 console.log([1, 2, 3, 4].toLocaleString()); // 1,2,3,4
 console.log([1, 2, 3, 4].toString()); // 1,2,3,4
 console.log([1, 2, 3, 4].concat([5, 6, 7, 8])); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
@@ -82,3 +82,17 @@ const combined = ['firstArr', ...nums1, 'middle', ...nums2, 'secondArr'];
 // console.log(combined)
 
 console.log(`-----------------------`);
+/* map VS forEach */
+// forEach works with html collections
+// map doesn't work with html collections
+
+
+/* mutating the array */
+const names = [`khaled`, `gaber`, `mesbah`, `sebaq`];
+const copiedNames = [...names];
+const sortedNames = names.sort();
+names.pop();
+console.log(names, copiedNames, sortedNames);
+
+// unrelated copied arrays using ... : spread operator
+// const copiedNames = [...names];
