@@ -15,3 +15,6 @@ x = x.map(e => Math.random()); */
 // let x = new Array(100).fill(0).map(Math.random);
 let x = Array(100).fill().map(Math.random);
 console.log(x);
+
+
+// const arr = [...new Array(1000)].map(() => Math.floor(Math.random() * 100));

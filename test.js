@@ -108,10 +108,21 @@ console.log(j);
 // console.log(i);
 
 
-// This is a JavaScript Quiz from BFE.dev 
-function func() {
-  const a = b = c = 1;
+// This is a JavaScript Quiz from BFE.dev
+
+
+
+/**
+ * @param {number[]} arr
+ * @returns number
+ */
+function findSingle(arr) {
+  const obj = {};
+  arr.forEach(e => obj[e] = 0);
+  arr.forEach(e => obj[e]++);
+  for (let e in obj) if(obj[e] === 1) return e;
 }
-func();
-console.log(b, c);
-console.log(typeof a, typeof b, typeof c);
+
+
+const arr = [10, 2, 2, 1, 0, 0, 10];
+findSingle(arr); // 1

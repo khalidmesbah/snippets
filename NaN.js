@@ -19,6 +19,7 @@ console.log(1 / 0 * 0);
 console.log(Infinity * 0);
 console.log(0 / 0);
 console.log(Infinity / Infinity);
+console.log(Infinity % Infinity)
 
 /* // implementing the nan function
 console.log(`🚀🔥👉 ⚡ implementing the nan function`);
