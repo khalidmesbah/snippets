@@ -1,128 +1,127 @@
-/* 
- + var 
-  - global => anywhere else
-  - local => inside a function
- + let
-  - local =>When you declare a variable with the let keyword inside
-   a block, statement, or expression,
-   its scope is limited to 
-   that block, statement, or expression.
- + const
-  - 
-*/
+// The global variable
+const watchList = [
+  {
+    "Title": "Inception",
+    "Year": "2010",
+    "Rated": "PG-13",
+    "Released": "16 Jul 2010",
+    "Runtime": "148 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Christopher Nolan",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
+    "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+    "Language": "English, Japanese, French",
+    "Country": "USA, UK",
+    "Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    "Metascore": "74",
+    "imdbRating": "8.8",
+    "imdbVotes": "1,446,708",
+    "imdbID": "tt1375666",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Interstellar",
+    "Year": "2014",
+    "Rated": "PG-13",
+    "Released": "07 Nov 2014",
+    "Runtime": "169 min",
+    "Genre": "Adventure, Drama, Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan, Christopher Nolan",
+    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+    "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "Language": "English",
+    "Country": "USA, UK",
+    "Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
+    "Metascore": "74",
+    "imdbRating": "8.6",
+    "imdbVotes": "910,366",
+    "imdbID": "tt0816692",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "The Dark Knight",
+    "Year": "2008",
+    "Rated": "PG-13",
+    "Released": "18 Jul 2008",
+    "Runtime": "152 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+    "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Language": "English, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    "Metascore": "82",
+    "imdbRating": "9.0",
+    "imdbVotes": "1,652,832",
+    "imdbID": "tt0468569",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Batman Begins",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "15 Jun 2005",
+    "Runtime": "140 min",
+    "Genre": "Action, Adventure",
+    "Director": "Christopher Nolan",
+    "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+    "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Language": "English, Urdu, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
+    "Metascore": "70",
+    "imdbRating": "8.3",
+    "imdbVotes": "972,584",
+    "imdbID": "tt0372784",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Avatar",
+    "Year": "2009",
+    "Rated": "PG-13",
+    "Released": "18 Dec 2009",
+    "Runtime": "162 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Language": "English, Spanish",
+    "Country": "USA, UK",
+    "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+    "Metascore": "83",
+    "imdbRating": "7.9",
+    "imdbVotes": "876,575",
+    "imdbID": "tt0499549",
+    "Type": "movie",
+    "Response": "True"
+  }
+];
 
-// 1 global scope
-/* // Declare the myGlobal variable below this line
-const myGlobal = 10;
-var oopsGlobal;
+function getRating(watchList) {
+  // Only change code below this line
+  let averageRating;
 
-function fun1() {
-  // Assign 5 to oopsGlobal Here
-  oopsGlobal = 5;
+  averageRating =watchList.reduce((a,c,arr)=>{
+    a+=+c.imdbRating
+    return a;
+  },0)
+  // Only change code above this line
+  return averageRating/watchList.length;
 }
 
-// Only change code above this line
-
-function fun2() {
-    var output = "";
-    if (typeof myGlobal != "undefined") {
-        output += "myGlobal: " + myGlobal;
-    }
-    if (typeof oopsGlobal != "undefined") {
-        output += " oopsGlobal: " + oopsGlobal;
-    }
-    console.log(output);
-}
-fun1()
-fun2()
-console.log(oopsGlobal) */
-// 2 local scope
-/* function myTest() {
-  const loc = "foo";
-  console.log(loc);
-}
-
-myTest();
-console.log(loc);
- */
-// 3 local vs global variable with the same name
-/* const someVar = "Hat";
-
-function myFun() {
-  const someVar = "Head";
-  return someVar;
-}
-console.log(myFun()) */
-// 4
-// -  When you declare a variable with the var keyword,
-// it is declared globally, or locally if declared inside a function.
-// {
-// var k = 1;
-// }
-// function fun() {
-// var l = 1;
-// }
-// console.log(k);
-// console.log(l);
-/* 
- When you declare a variable with the let keyword inside a block, statement, or expression,
- its scope is limited to that block, statement, or expression. 
-*/
-
-/* {
-  let k = 1;
-}
-function fun() {
-  let l = 1;
-}
-console.log(k);
-console.log(l);
- */
-/* var numArray = [];
-for (var i = 0; i < 3; i++) {
-  numArray.push(i);
-}
-console.log(numArray);
-console.log(i);
-
-var numArray = [];
-for (let j = 0; j < 3; j++) {
-  numArray.push(j);
-}
-console.log(numArray);
-console.log(j);
- */
-
-// var printNumTwo;
-// for (let i = 0; i < 3; i++) {
-//   /* printNumTwo() returned the correct value because three different i variables
-//    with unique values (0, 1, and 2) were created
-//    by the let keyword within the loop statement. */
-//   if (i === 2) {
-//     printNumTwo = function () {
-//       return i;
-//     };
-//   }
-// }
-// console.log(printNumTwo());
-// console.log(i);
-
-
-// This is a JavaScript Quiz from BFE.dev
-
-
-
-/**
- * @param {number[]} arr
- * @returns number
- */
-function findSingle(arr) {
-  const obj = {};
-  arr.forEach(e => obj[e] = 0);
-  arr.forEach(e => obj[e]++);
-  for (let e in obj) if(obj[e] === 1) return e;
-}
-
-
-const arr = [10, 2, 2, 1, 0, 0, 10];
-findSingle(arr); // 1
+console.log(getRating(watchList));

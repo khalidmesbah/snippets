@@ -15,6 +15,9 @@ Objects
 - __proto__: a property for every variable that points to the parent object it inherits from
 - prototype: a property for constructor functions(classes) that contains all the stuff that will be inherited by its instances
 - new Person('param1') => object instantiation
+- Remember to Set the Constructor Property when Changing the Prototype
+- Note that the constructor property is a reference to the constructor function that created the instance.
+- 
 */
 
 
@@ -294,3 +297,38 @@ console.log(me.talk());
 //   }
 // }
 // // console.log(pen.talk())
+
+
+/* inheritance */
+function Animal() { };
+// add all the repeated props and methods in the Animal prototype and reset the constructor
+Animal.prototype = {
+  constructor: Animal,
+  describe: function () {
+    console.log("My name is " + this.name);
+  }
+};
+
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+let duck = new Bird();
+console.log(duck.constructor)
+
+// Object.create(obj):-
+// creates a new object, and sets obj as the new object's prototype. Recall that the prototype is like the "recipe"
+// for creating an object. By setting the prototype of animal to be the prototype of Animal,
+// you are effectively giving the animal instance the same "recipe" as any other instance of Animal.;
+
+/* Bird inherits Animal and add additional methods
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+*/

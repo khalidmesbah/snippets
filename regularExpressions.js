@@ -3,13 +3,14 @@
 - test is called on a regular expression
 - match is called on a string   
 - () are called capture group
+- [] are called character class
 - meta character: differs from a language to the other
     - single characters
         - \d : 0-9
         - \D : not(0-9)
-        - \w : A-Za-z0-9
-        - \W : not(A-Za-z0-9)
-        - \s : white space or a tab
+        - \w : A-Za-z0-9_
+        - \W : not(A-Za-z0-9_)
+        - \s : white space or a tab = [ \r\t\f\n\v].
         - \S : not(white space or a tab)
         - . : any character whatsoever
         - \. : .
@@ -20,11 +21,11 @@
         - *? : not greedy
         - + : one or more 
         - ? : zero or one
-        - {}:
+        - {}: quantity specifiers.
             - {min,max}
             - {number}
     - position
-        - ^ : beginning
+        - ^ : beginning : negated character
         - $ : end
         - \b : word boundary
     - character classes : [anything between square brackets]
@@ -49,7 +50,10 @@ Edit the Expression & Text to see matches. Roll over matches or the expression f
 The side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community, and view patterns you create or favorite in My Patterns.
 Explore results with the Tools below. Replace & List output custom results. Details lists capture groups. Explain describes your expression in plain English.
 `;
-console.log(string.replace(/(\b\w+\b)/g, (match,group1,group2,group3) => {
+console.log(string.replace(/(\b\w+\b)/g, (match, group1, group2, group3) => {
     if (match.length < 5) return match.toUpperCase() + match + group1.toUpperCase();
     else return match;
 }));
+
+/* exchange two elements using regular expression */
+console.log("Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1 $2'));

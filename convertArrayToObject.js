@@ -10,3 +10,5 @@ for (entry of arrEntries) {
 }
 
 console.log(`🚀🔥👉 ⚡ obj`, obj);
+
+console.log(Object.fromEntries(arr.entries()));
