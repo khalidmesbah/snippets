@@ -8,8 +8,8 @@ Objects
 - delete object key
 - modify, remove, add key-value pairs
 - tekkenCharacter.origin = 'South Korea';
-- dot notation
-- object notation
+- dot notation => if the identifier is valid
+- bracket notation => if the identifier is not valid or dynamic identifier (dynamic property name)
 - the best functions are those with no parameters
 - prototype property belongs only to constructor functions / classes
 - __proto__: a property for every variable that points to the parent object it inherits from
@@ -332,3 +332,63 @@ Bird.prototype.fly = function() {
   console.log("I'm flying!");
 };
 */
+
+/* how to create objects */
+/*
+- object literal
+- new object() 
+- object.create() 
+- object.assign()
+- factory function
+*/
+
+
+// 1:Object Literal
+const objMethodOne = {
+  property: "1:Object Literal"
+};
+console.log(objMethodOne.property);
+
+// 2:new Object()
+const objMethodTwo = new Object({
+  property: "2:new Object()"
+});
+console.log(objMethodTwo.property);
+
+// 3:Object.create()
+const objMethodThree = Object.create({
+  property: "3:Object.create()"
+});
+console.log(objMethodThree.property);
+
+// 4:Object.assign()
+const objMethodFour = Object.assign({
+  property: "4:Object.assign()"
+});
+console.log(objMethodFour.property);
+
+// 5:Factory Function
+function createObj() {
+  return {
+      property: "5:Factory Function"
+  };
+}
+const objMethodFive = createObj();
+console.log(objMethodFive.property);
+
+// 6:Constructor Function
+function ConstructorFunc() {
+  this.property = "6:Constructor Function";
+}
+const objMethodSix = new ConstructorFunc("");
+console.log(objMethodSix.property);
+
+// 7:Class
+class Class {
+  constructor() {
+      this.property = "7:Class";
+  }
+}
+const objMethodSeven = new Class("");
+console.log(objMethodSeven.property);
+

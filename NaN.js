@@ -1,3 +1,4 @@
+const { parseFile } = require("aws-sdk/lib/shared-ini/ini-loader");
 
 console.log(1 / 0);
 console.log(0 / 0);
@@ -19,7 +20,25 @@ console.log(1 / 0 * 0);
 console.log(Infinity * 0);
 console.log(0 / 0);
 console.log(Infinity / Infinity);
-console.log(Infinity % Infinity)
+console.log(Infinity % Infinity);
+console.log(1 - "string"); // console.log(1 - "1") === 0
+console.log(-'string');
+console.log(+'string');
+console.log(-`NaN`);
+console.log(+`NaN`);
+console.log(NaN);
+console.log(Number(NaN));
+console.log(Number("string"));
+console.log(-NaN);
+console.log(+NaN);
+console.log(parseFloat("string"));
+console.log(parseInt("string"));
+
+const v = NaN;
+console.log(Number.isNaN("khaled"));
+console.log(isNaN("khaled"));
+console.log(Number.isNaN(v));
+console.log(isNaN(v));
 
 /* // implementing the nan function
 console.log(`🚀🔥👉 ⚡ implementing the nan function`);
@@ -37,7 +56,7 @@ console.log(`🚀🔥👉 ⚡ isNan(NaN)`, isNan(NaN));
  */
 
 
-/* 
+/*
 console.log(NaN == NaN)
 console.log(NaN === NaN)
 console.log(Object.is(NaN, NaN))

@@ -133,3 +133,22 @@ console.log(arr4);
 console.log(arr5);
 console.log(arr6);
 console.log(arr7);
+
+
+/* Notes */
+/* // limit the length of the array or get the first k elements
+const array = ['k','h','a','l','e','d']
+let k =3;
+array.length = k;
+console.log(array) */
+
+/* // make empty elements or add element to an index bigger than length
+const array = ['k','h','a','l','e','d']
+array[10]='m'
+console.log(array)
+*/
+
+// check if element is last element in the array or the array contains 1 element
+const array = [];
+console.log(array.shift())
+console.log(array.pop())
