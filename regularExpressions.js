@@ -1,10 +1,20 @@
+/* how to make a regular expressions
+- /pattern/modifier
+- new RegExp(`pattern`,`modifier`)
+ */
+
 /* 
+- modifiers === flags
 - literal character:abcdefghijglmnopqrstuvwxyz4234dfj => any character
 - test is called on a regular expression
 - match is called on a string   
 - () are called capture group
 - [] are called character class
 - meta character: differs from a language to the other
+    - modifiers
+        - g
+        - i
+        - m
     - single characters
         - \d : 0-9
         - \D : not(0-9)
@@ -24,6 +34,9 @@
         - {}: quantity specifiers.
             - {min,max}
             - {number}
+            - {alLeast,}
+        - ?= followed by st
+        - ?1 not followed by st
     - position
         - ^ : beginning : negated character
         - $ : end

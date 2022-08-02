@@ -241,7 +241,10 @@ class Child extends Person {
 }
 const child = new Child(`osama`, 15, `male`);
 
-
+console.log(`-----------`)
+console.log(child instanceof Child)
+console.log(child.constructor === Child)
+console.log(`-----------`)
 
 /* object destructuring */
 const address = {
