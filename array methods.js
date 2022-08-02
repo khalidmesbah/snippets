@@ -121,11 +121,12 @@ const arr4 = originalArray.filter(e => e);
 const arr5 = originalArray.map(e => e);
 const arr6 = new Array().concat(originalArray);
 const arr7 = Array.from(originalArray); // Array.from(originalArray.values())
-console.log(`originalArray`, originalArray);
+const arr8 = JSON.parse(JSON.stringify(originalArray)); // deep copy
+console.log(`originalArrayBefore`, originalArray);
 originalArray.pop();
 originalArray.pop();
 originalArray.pop();
-console.log(`originalArray`, originalArray);
+console.log(`originalArrayAfter`, originalArray);
 console.log(arr1);
 console.log(arr2);
 console.log(arr3);
@@ -133,6 +134,7 @@ console.log(arr4);
 console.log(arr5);
 console.log(arr6);
 console.log(arr7);
+console.log(arr8);
 
 
 /* Notes */
@@ -149,6 +151,6 @@ console.log(array)
 */
 
 // check if element is last element in the array or the array contains 1 element
-const array = [];
-console.log(array.shift())
-console.log(array.pop())
+// const array = [];
+// console.log(array.shift())
+// console.log(array.pop())
