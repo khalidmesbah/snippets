@@ -14,7 +14,7 @@ const objMethodOne = {
 };
 console.log(objMethodOne.property);
 
-// 2:new Object()
+// 2:Object constructor()
 const objMethodTwo = new Object({
     property: "2:new Object()"
 });
@@ -58,7 +58,13 @@ class Class {
 const objMethodSeven = new Class("");
 console.log(objMethodSeven.property);
 
-// 7:Spread Operator
+// 8:Spread Operator
 const objMethodEight = { ...objMethodSeven };
-objMethodEight.property = `7:Spread Operator`;
+objMethodEight.property = `8:Spread Operator`;
 console.log(objMethodEight.property);
+
+// 9:Singleton Pattern
+const objMethodNine = new (function SingletonPattern() {
+    this.property = `9:Singleton Pattern`;
+})();
+console.log(objMethodNine.property);

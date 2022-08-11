@@ -1,3 +1,20 @@
+
+/* types in javascript */
+/* 1: value types => copied by value
+number
+string
+boolean
+symbol
+null
+undefined
+bigint
+*/
+
+/* 2: reference types => copied by reference
+object
+array
+functions
+*/
 console.log(`-----------string-----------`);
 const str1 = `sina`;
 const str2 = new String(`sina`);

@@ -1,5 +1,7 @@
 /* 
 Objects 
+- the constructor is the function that is used to create an object
+- there are built-in constructor functions and user defined constructor functions
 - almost every thing in javascript is an object
 - hasOwnProperty => checks if the property is in the object itself not in the prototype
 - for(let user in users<the object>) console.log(user)
@@ -17,7 +19,7 @@ Objects
 - new Person('param1') => object instantiation
 - Remember to Set the Constructor Property when Changing the Prototype
 - Note that the constructor property is a reference to the constructor function that created the instance.
-- 
+- if ('st' in obj) console.log(`hi`)
 */
 
 
@@ -34,7 +36,11 @@ const obj = {
   quote: "work hard",
 };
 
-
+/* in operator
+if(1 in obj) console.log(`yeeeeeeeeeeeeeees`)
+if(`age` in obj) console.log(`yeeeeeeeeeeeeeees`)
+if(`qoute` in obj) console.log(`yeeeeeeeeeeeeeees`)
+ */
 /* good for problem solving
 const users = {
   Alan: {

@@ -2,7 +2,7 @@
 Use Closure to Protect Properties Within an Object from Being Modified Externally
 In JavaScript, a function always has access to the context in which it was created. This is called closure
 .
-
+- a closure of a function is its inner variables/scope + outer variables/scope
 */
 
 

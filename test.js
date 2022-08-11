@@ -1,13 +1,33 @@
-const a = function (x) {
-  this.x = x;
-};
+function StopWatch() {
+    let duration = 0;
+    let status = 0;
+    let interval;
+    Object.defineProperty(this,`duration`,{
+        get:function(){
+            return duration;
+        }
+    })
+    this.reset = function () {
+        duration = 0;
+    };
+    this.start = function () {
+        if (status) throw new Error(`StopWatch has already started`);
+        status = 1;
+        interval = setInterval(() => {
+            duration += 1;
+        }, 1);
+    };
+    this.stop = function () {
+        if (!status) throw new Error(`Stopwatch is not started`);
+        status = 0;
+        clearInterval(interval);
+        console.log(duration);
+    };
+}
 
-const b = function (y) {
-  this.y = y;
-};
-console.log(a.prototype)
-
-const newB = new b(`x`,`y`);
-
-// newB.getX(); // x
-// newB.getY(); // y
+const s = new StopWatch();
+s.start();
+s.reset();
+setTimeout(()=>{
+    s.stop()
+},5000)

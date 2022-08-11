@@ -1,13 +1,18 @@
-/* Function Types
-- anonymous function
-- callback function
-- named function
--- factory
--- constructor
-- objects functions / methods
-- generated function
+/* Functions In JavaScript
+1 - function statement === function declaration
+2 - function expression
+3 - named function expression
+4 - anonymous function
+5 - arrow function
+6 - callback function 
+7 - factory function
+8 - constructor function
+9 - object's function === methods
+10 - generator function
+11 - higher order function
+12 - lambda function
+13 - function factories
 - arrow function : always an anonymous function ,doesn't create its own execution context
-- higher order functions
 - lambda functions:-
 -- anonymous functions
 -- takes one or more parameters
@@ -18,9 +23,17 @@ factory functions => returns an object
 function factories => returns a function
 */
 
-/* anonymous function */
-const anonymousFunction = function () {
-    return `anonymous function`;
+/* function statement === function declaration */
+function functionStatement(){
+    return `functionDeclaration`;
+}
+/* function expression */
+const functionExpression = function () {
+    return `functionExpression`;
+};
+/* named function expression */
+const namedFunctionExpression = function xyz() {
+    return `namedFunctionExpression => ${xyz}`;
 };
 /* callback functions */
 function callbackFunction() {
@@ -30,19 +43,14 @@ setTimeout(callbackFunction, 1);
 setTimeout(() => {
     return `callback function`;
 }, 1);
-setTimeout(function () {
-    return `callback function`;
-}, 1);
 
-/* named function */
-function Factory() {
+/* factory function */
+function factoryFunction() {
     return {};
 }
-function Constructor(param) {
+/* constructor function */
+function ConstructorFunction(param) {
     this.param = param;
-}
-function doSomething() {
-    return `doing something`;
 }
 /* objects method */
 const me = {
@@ -56,7 +64,7 @@ const me = {
 const arrowFunction = () => {
     console.log(arguments);
 };
-// arrowFunction();
+arrowFunction();
 
 /* binding with this */
 /* 
@@ -81,3 +89,11 @@ console.log(test.walk());
 
 
 */
+
+/* first class citizens/functions */
+// a function that is passed as an argument to another function 
+// a function that is returned from another function
+// a function that is assigned to a variable as if it's a value
+
+
+/* the best functions are those with no parameters */
