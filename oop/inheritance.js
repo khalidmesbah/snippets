@@ -4,7 +4,7 @@
 - follow the dry principle
 - 
 */
-class Person {
+class Person { // parent class === base class === super class
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -14,7 +14,7 @@ class Person {
     }
 }
 
-class Employee extends Person {
+class Employee extends Person { // child class === extended class === sub class
     constructor(name, age, job) {
         super(name, age);
         this.job = job;

@@ -1,5 +1,6 @@
 /*  NOTES
-- this refers to the object that the method is associated with:
+- this refers to the object that the method is associated with
+- this === current execution context
 - this refers to the object it belongs to
 - this returns a reference to the current object
 - arrow functions don't rebind this
@@ -8,8 +9,8 @@
 - call : multiple parameters = > execute the function
 - apply : exactly the call but instead of separating the list of parameters with commas we pass them as an array
 + it depends on where it's used
-- this alone
-- in a method
+- this alone => global/window object
+- in a method => the current object
 - object method binding
 - in a function
 - in an event handler
@@ -138,3 +139,10 @@ const you = {
 // console.log(talk.apply(me, ['it']));
 
 /* event handlers */
+
+
+/* in a function => global/window*/ 
+function printThis(){
+    console.log(this)
+}
+printThis.bind()

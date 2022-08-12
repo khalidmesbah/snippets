@@ -1,6 +1,10 @@
 /* logical or operator ||
-    - null + undefined + any falsy value
+    - falsy values
  */
 /* nullish coalescing operator ??
     - null + undefined
  */
+/* optional chaining operator &&
+const a = 1;
+a === 1 && console.log(`ok`);
+*/

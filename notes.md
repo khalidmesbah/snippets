@@ -3,3 +3,4 @@
 - undefined == null => true
 - undefined === null => false
 - javascript objects are maps
+- this === self === window === frames === globalThis

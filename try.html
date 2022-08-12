@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>try</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        background: #333;
+      }
+      .outer {
+        font-size: 20px;
+        color: #000;
+      }
+      .outer:hover,
+      .outer:visited {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#outerLink" class="outer">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia ipsam
+      quaerat ducimus temporibus eius dolorem eaque dolorum. Optio, adipisci
+      esse repudiandae
+      <object data="link" type="link">
+        <a class="inner" href="#innerLink">impedit</a>
+      </object>
+      doloremque ipsum debitis nihil corrupti ex porro tempora.
+    </a>
+    <script>
+      const a1 = [1, 2, 3];
+      const a2 = [1, 2, 3];
+      console.log(`${a1}` === `${a2}`)
+    </script>
+  </body>
+</html>

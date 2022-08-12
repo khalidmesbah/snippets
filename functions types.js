@@ -11,7 +11,8 @@
 10 - generator function
 11 - higher order function
 12 - lambda function
-13 - function factories
+13 - function factory
+14 - pure function
 - arrow function : always an anonymous function ,doesn't create its own execution context
 - lambda functions:-
 -- anonymous functions
@@ -24,7 +25,7 @@ function factories => returns a function
 */
 
 /* function statement === function declaration */
-function functionStatement(){
+function functionStatement() {
     return `functionDeclaration`;
 }
 /* function expression */
@@ -71,7 +72,7 @@ arrowFunction();
 - all the functions in js (except arrow functions) bind the value of this keyword to an object 
 */
 const test = {
-    name: "sina",
+    name: "khaled",
     talk: function () { // regular functions when invoked by an object bind this keyword to the object
         return this;
     },
@@ -97,3 +98,39 @@ console.log(test.walk());
 
 
 /* the best functions are those with no parameters */
+
+
+/* pure function => the building block of functional programming
+- it can't access anything outside it (database,files)
+- returns the same output given the same input
+- doesn't cause side effects outside the function's scope(mutate date outside the function or supplied to the function)
+- easier to reason about because their reliability
+- all functions should be pure unless explicitly causing a side effect
+- if a function doesn't return a value, it's an indication that it is causing side effects
+// examples
+- map
+- slice
+X push
+X splice
+X Math.random()
+X 
+*/
+
+/* not a pure function */
+const arr = [1, 2, 3];
+function notPure(arr, e) {
+    arr.push(e); // mutate data outside it
+    return arr;
+}
+/* pure function */
+function pure(a, e) {
+    return [...a, e]; // doesn't mutate data outside it
+}
+console.log(`-------not pure-------`)
+console.log(notPure(arr, 4));
+console.log(notPure(arr, 4));
+console.log(notPure(arr, 4));
+console.log(`-------pure-------`)
+console.log(pure(arr, 4));
+console.log(pure(arr, 4));
+console.log(pure(arr, 4));

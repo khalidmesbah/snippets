@@ -11,7 +11,7 @@ console.log(iterator.next());
 
 console.log(`------------------`);
 
-// Emplementation Example
+// Implementation Example
 var someString = new String('khaled');
 
 someString[Symbol.iterator] = function (value) {
