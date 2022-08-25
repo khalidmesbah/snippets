@@ -33,7 +33,10 @@ console.log(-NaN);
 console.log(+NaN);
 console.log(parseFloat("string"));
 console.log(parseInt("string"));
-
+console.log('hi' / 3);
+console.log(Math.sqrt(-1))
+console.log(Math.sqrt(NaN))
+console.log(`----------------`);
 const v = NaN;
 console.log(Number.isNaN("khaled"));
 console.log(isNaN("khaled"));

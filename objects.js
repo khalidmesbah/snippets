@@ -1,6 +1,7 @@
 /* 
 Objects 
 - the constructor is the function that is used to create an object
+- the object is a physical entity of a class, it's a class instance
 - there are built-in constructor functions and user defined constructor functions
 - almost every thing in javascript is an object
 - hasOwnProperty => checks if the property is in the object itself not in the prototype

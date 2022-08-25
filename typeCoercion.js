@@ -1,3 +1,6 @@
+// (- * / %) will convert its operands to numbers
+// (+) will convert its operands to strings
+
 // type coercion === type casting
 console.log(`🚀🔥👉 ⚡ 1   ==  1 `, 1 == 1); // true
 console.log(`🚀🔥👉 ⚡ 1   ==  2 `, 1 == 2); // false

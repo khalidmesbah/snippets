@@ -1,8 +1,10 @@
 /* benefits */
 /* 
 - refactor ugly switch case statements
-- 
-- 
+- it can be divided into two broad categories
+    - overloading(method overloading)
+    - overriding(method overriding)
+- js doesn't support method overloading
 */
 class Person {
     constructor(name, age) {
@@ -19,11 +21,25 @@ class Employee extends Person {
         super(name, age);
         this.job = job;
     }
-    print() {
-        console.log(super.print());
+    print() { // method overriding
+        // console.log(super.print());
         return `I'm ${this.name}, a ${this.job} and my age is ${this.age}`;
     }
 }
 
 const k = new Employee(`khaled`, 21, `SWE`);
 console.log(k.print());
+
+class Father {
+    constructor(name){
+        this.name = name;
+    }
+    display(){
+        console.log(`i am ${this.name}`)
+    }
+    display(vehicle){ // method overloading
+        console.log(`i am driving ${vehicle}`)
+    }
+}
+const f = new Father(`khaled`);
+f.display(`car`);

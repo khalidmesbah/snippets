@@ -2,7 +2,7 @@
 /* 
 - reduce complexity
 - increase reusability
-- 
+- wrapping data and functions together
 */
 
 /* class Person {
@@ -31,8 +31,6 @@
 
 const p = new Person(`khaled`, 21);
 console.log(p.getName); */
-
-const { ApiGatewayManagementApi } = require("aws-sdk");
 
 
 /* these functions and variables are not encapsulated */

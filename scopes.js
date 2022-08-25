@@ -1,4 +1,12 @@
-/* 
+/* Types Of Scopes 
+- global scope
+- module scope
+- function scope / local scope
+- block scope
+*/
+
+/* where you can access a specific function or a variable in the call
+- scope is defined by curly brackets
 + global scope
 - Variables which are defined outside of a function block have Global scope
 - Variables which are declared without the let or const keywords are automatically created in the global scope.  
@@ -9,3 +17,5 @@ When you do this, the local variable takes precedence over the global variable.
 - 
 */
 
+
+console.log(25 + true)
