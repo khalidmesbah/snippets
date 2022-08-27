@@ -1,33 +1,28 @@
-// create a constructor function
-function Animal() { }
+/* 
+- inheritance in javascript is done using the prototype object
+- inheritance in javascript is object based
+- every js object has a prototype object
+*/
 
-Animal.prototype = { 
-  constructor: Animal, // because assigning an object to the constructor function's prototype will cause the constructor property to equal Object
-  eat: function () {
-    console.log("nom nom nom");
+
+function Employee(name){
+  this.name = name;
+  this.doWork = function(){
+    console.log(`doing work`)
   },
-  legs: 4,
-};
+  this.attend = function(){
+    console.log(`attending`)
+  }
+}
+function Manager(name,cabin){
+  this.cabin = cabin;
+  this.doWork = function(){
+    console.log(`managing`)
+  }
+}
+Manager.prototype = new Employee();
+Manager.prototype.constructor = Manager;
 
-// create a constructor function for making dogs 
-function Dog() { }
-// make Dog inherit from Animal 
-Dog.prototype = Object.create(Animal.prototype)
-// Only change code below this line
-
-
-let beagle = new Dog();
-
-beagle.eat()
-console.log(beagle.legs)
-console.log(beagle.constructor === Animal)
-
-
-// For example, Bird is a constructor that inherits its prototype from Animal:
-function Animal() { }
-Animal.prototype.eat = function() {
-  console.log("nom nom nom");
-};
-function Bird() { }
-Bird.prototype = Object.create(Animal.prototype);
-Bird.prototype.constructor = Bird;
+var m = new Manager(`khaled`,`cabini`);
+m.doWork()
+m

@@ -1,18 +1,21 @@
-/* used to assign complex Values to variables */
-const complexVar = (()=>{
+/*
+- used to assign complex Values to variables 
+- avoid name collision
+*/
+const complexVar = (() => {
   const a = 10;
   const b = 20;
   let res;
-  res=  a * b * 2;
+  res = a * b * 2;
   res + 1;
   res++;
   res = res / 2;
-  res -= 0.5
+  res -= 0.5;
   return res;
 
 })();
 
-console.log(complexVar)
+console.log(complexVar);
 
 /* useful for data privacy */
 
@@ -42,3 +45,9 @@ let motionModule = (function () { // group mixins together
 
 
 
+/* save name collision */
+
+(function () {
+  console.log(`welcome`);
+})();
+var welcome = `welcome`;

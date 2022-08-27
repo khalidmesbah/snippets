@@ -8,3 +8,5 @@ const a = sumRange(5);
 console.log(a); */
 a=20;
 console.log(a&1==0)
+
+Object.create()
