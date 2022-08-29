@@ -25,9 +25,8 @@ Notice the syntax used to invoke the getter and setter.
  It is convention to precede the name of a private variable with an underscore (_).
   */
 
-
 /* inheritance  */
-class Novel extends Book{
+class Novel extends Book {
   constructor(author, type) {
     super(author);
     this.type = type;
@@ -37,8 +36,35 @@ class Novel extends Book{
   }
 }
 
-const novel = new Novel("anonymous",'adventure');
+const novel = new Novel("anonymous", "adventure");
 console.log(novel.writer);
 novel.writer = "newAuthor";
 console.log(novel.writer);
-console.log(novel.getType())
+console.log(novel.getType());
+
+/* named class expression */
+console.log(`🚀 ~ named class expression`);
+var Square = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+const square = new Square(5, 5);
+const poster = new Square(2, 3);
+
+console.log(square.height);
+/* unnamed class expression */
+console.log(`🚀 ~ unnamed class expression`);
+
+var Square2 = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+const square2 = new Square2(5, 5);
+const poster2 = new Square2(2, 3);
+
+console.log(square2.height);
