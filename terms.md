@@ -1,0 +1,7 @@
+- tagged template literals: ${} in ``
+- fat arrow: =>
+- parenthesis: ()
+- braces: {}
+- brackets: []
+- template literal functions: function``
+- 

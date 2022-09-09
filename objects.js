@@ -23,7 +23,6 @@ Objects
 - if ('st' in obj) console.log(`hi`)
 */
 
-
 /* - Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
 - we can use bracket notation to access a property when it's name is a string that contains a whitespace,
  Another use of bracket notation on objects is to access a property which is stored as the value of a variable.
@@ -90,9 +89,9 @@ let employee = {
 */
 // object literal
 const car_objectLiteral = {
-  name: 'loda',
+  name: "loda",
   model: 2002,
-  color: 'silver'
+  color: "silver",
 };
 // factory
 /* 
@@ -110,10 +109,10 @@ function createCar(name, model, color) {
     },
     stop: function () {
       console.log(`${name} is stopping`);
-    }
+    },
   };
 }
-const car_factory = createCar('loda', 2002, 'silver'); // you cant change its properties or functions unlike literal objects
+const car_factory = createCar("loda", 2002, "silver"); // you cant change its properties or functions unlike literal objects
 car_factory.name = `king`;
 console.log(car_factory.prototype);
 
@@ -125,18 +124,17 @@ function Car(name, model, color) {
   Object.defineProperty(this, `tyres`, {
     get: function () {
       return _tyres;
-    }
+    },
   });
   Object.defineProperty(this, `test`, {
     configurable: false, // can't be deleted
     writeable: false, // can't be reassigned
     enumerable: false, //
-    value: 10
+    value: 10,
   });
   this.name = name;
   this.model = model;
   this.color = color;
-
 }
 Car.prototype.start = function () {
   console.log(`${this.name} is starting`);
@@ -152,7 +150,7 @@ tesla.test = `loda`;
 //     console.log(key);
 // }
 // the functions inside the objects made with the constructor function are made for each object which is a waste of memory
-// => so we add the (functions or the data) which will be the same for every/most object/s to the prototype of the constructor function 
+// => so we add the (functions or the data) which will be the same for every/most object/s to the prototype of the constructor function
 // the methods or data that will be the same for every object we add it to the prototype of the constructor function
 // note: you can't use the arrow function with the prototype because `this` will refer to something else
 /* 
@@ -160,7 +158,7 @@ Car.prototype.stop = function () {
   console.log(`${this.name} is stopping`);
 };
  */
-const car_constructorFunction = new Car('loda', 2002, 'silver');
+const car_constructorFunction = new Car("loda", 2002, "silver");
 /* constructorFunction.prototype VS instance.__proto__ */
 // prototype === __proto__ except that (prototype => constructorFunction) and (__proto__ => instances)
 // console.log(car_constructorFunction.__proto__)
@@ -182,10 +180,10 @@ const car_constructorFunction = new Car('loda', 2002, 'silver');
 // const fun = new Function(`p`, `console.log(p)`);
 // fun('khaled');
 
-
 /* inheritance */
 
-function Lancer(name, model, color, maxSpeed) { // this is a class
+function Lancer(name, model, color, maxSpeed) {
+  // this is a class
   this.name = name;
   this.model = model;
   this.color = color;
@@ -195,18 +193,16 @@ function Lancer(name, model, color, maxSpeed) { // this is a class
 
 Lancer.prototype = Object.create(Car.prototype); // this is prototype inheritance
 Lancer.prototype.constructor = Lancer; //  to make the Lancer prototype to have its own constructor
-function inherit(child, parent) { // a helper function 
+function inherit(child, parent) {
+  // a helper function
   child.prototype = Object.create(parent.prototype);
   child.prototype.constructor = child;
 }
-const merage = new Lancer('merage', 2002, 'red', 454);
+const merage = new Lancer("merage", 2002, "red", 454);
 // console.log(merage.tyres); // doesn't work
 
-
 // functions can be used to create objects by adding the new keyword before them which are known as constructor functions
-// the new keyword before a functions executes the functions as a constructor function to make objects  
-
-
+// the new keyword before a functions executes the functions as a constructor function to make objects
 
 /* let in VS let of */
 // let of doesn't work with objects because they are not iterable
@@ -248,34 +244,35 @@ class Child extends Person {
 }
 const child = new Child(`osama`, 15, `male`);
 
-console.log(`-----------`)
-console.log(child instanceof Child)
-console.log(child.constructor === Child)
-console.log(`-----------`)
+console.log(`-----------`);
+console.log(child instanceof Child);
+console.log(child.constructor === Child);
+console.log(`-----------`);
 
 /* object destructuring */
 const address = {
-  street: '15',
-  city: 'sohag',
-  country: ''
+  street: "15",
+  city: "sohag",
+  country: "",
 };
 
 const { street: s, city: c } = address;
 // console.log(s, c);
 
-
 /* spread operator*/
 // spread operator to clone an object
 // const sameAddress = address // modifying the original object will not affect the cloned object
 const sameAddress = { ...address }; // modifying the original object will not affect the cloned object
-// delete address.country 
+// delete address.country
 // console.log(sameAddress , address)
 
 // spread operator to combine too objects
-const combined = { ...address, ...car_objectLiteral, newProperty: 'I Am New??' };
+const combined = {
+  ...address,
+  ...car_objectLiteral,
+  newProperty: "I Am New??",
+};
 // console.log(address, car_objectLiteral, combined);
-
-
 
 /* inheriting using setPropertyOf */
 /* const Person23 = {
@@ -298,8 +295,6 @@ const me =Object.create(Person232);
 console.log(me.talk());
  */
 
-
-
 // const pen = {
 //   name :`khaled`,
 //   talk(){
@@ -308,22 +303,21 @@ console.log(me.talk());
 // }
 // // console.log(pen.talk())
 
-
 /* inheritance */
-function Animal() { };
+function Animal() {}
 // add all the repeated props and methods in the Animal prototype and reset the constructor
 Animal.prototype = {
   constructor: Animal,
   describe: function () {
     console.log("My name is " + this.name);
-  }
+  },
 };
 
-function Bird() { }
+function Bird() {}
 Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 let duck = new Bird();
-console.log(duck.constructor)
+console.log(duck.constructor);
 
 // Object.create(obj):-
 // creates a new object, and sets obj as the new object's prototype. Recall that the prototype is like the "recipe"
@@ -342,3 +336,19 @@ Bird.prototype.fly = function() {
   console.log("I'm flying!");
 };
 */
+
+/* object shorthand */
+const name = "khaled";
+const country = "egypt";
+const shorthandObj = {
+  name, 
+  country,
+};
+console.log(shorthandObj);
+
+
+/* in keyword */
+if("name" in shorthandObj)console.log('yes');
+if(name in shorthandObj)console.log('yes2');
+/* ===
+if(shorthandObj.name != null) console.log(`yes 3`) */

@@ -1,5 +1,3 @@
-const { parseFile } = require("aws-sdk/lib/shared-ini/ini-loader");
-
 console.log(1 / 0);
 console.log(0 / 0);
 console.log(-1 / 0);
@@ -16,6 +14,8 @@ console.log(0 * Infinity);
 /* NaN */
 console.log(`------------NaN------------`);
 console.log(Infinity - Infinity);
+console.log([1] * [2]);
+console.log([1,2] * [2]);
 console.log(1 / 0 * 0);
 console.log(Infinity * 0);
 console.log(0 / 0);

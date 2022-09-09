@@ -13,6 +13,7 @@
 12 - lambda function
 13 - function factory
 14 - pure function
+15 - template literal function
 - arrow function : always an anonymous function ,doesn't create its own execution context
 - lambda functions:-
 -- anonymous functions
@@ -134,3 +135,22 @@ console.log(`-------pure-------`)
 console.log(pure(arr, 4));
 console.log(pure(arr, 4));
 console.log(pure(arr, 4));
+
+
+/* Template literal function */
+console.clear();
+/* Template literal function */
+console.log('Template literal function');
+
+function tlf(string,...variables){
+    return variables.reduce((resultString,variable,index)=>{
+        return `${resultString}${variable}${string[index+1]}`
+    },string[0])
+}
+console.log(tlf`my first name is ${global.firstName || `khaled`}, my last name is ${global.lastName || `mesbah`} and my job is ${global.job || `frontEnd`}`);
+
+function welcome(){
+    console.log(`welcome`)
+}
+welcome``
+welcome()

@@ -42,8 +42,8 @@ console.log([1, 2, 3].some((num) => num >= 3)); // true
 console.log([1, 2, 3].some((num) => num > 3)); // false
 console.log([1, 2, 3, 4].every((num) => num > 3)); // false
 console.log([1, 2, 3, 4].every((num) => num < 9)); // true
-console.log([1, 2, 1, 4].find((num) => num > 2)); // 4 =>first number bigger than 2
-console.log([1, 2, 3, 4].find((num) => num > 2)); // 3 =>first number bigger than 2
+console.log([1, 2, 1, 4].find((num) => num > 2)); // 4 =>first number bigger than 2 ***as string***
+console.log([1, 2, 3, 4].find((num) => num > 2)); // 3 =>first number bigger than 2 ***as string***
 console.log([1, 2, 3, 4].findIndex((num) => num > 2)); // 2 => give my the index of the first number bigger than 2
 console.log([1, 2, 3, 4].indexOf(2)); // 1
 console.log([1, 2, 3, 4, 2].lastIndexOf(2)); // 4
