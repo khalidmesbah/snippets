@@ -6,7 +6,8 @@ const person = {
 
 // const personCopy = person;// shollow copy ,personCopy references person , they are the same , not a copy
 const personCopy = JSON.parse(JSON.stringify(person)); // a correct copy
-const personCopy2 = Object.assign({},person);
+const personCopy2 = Object.assign({}, person);
+console.log(person);
 delete person.name;
 console.log(person);
 console.log(`=================`);

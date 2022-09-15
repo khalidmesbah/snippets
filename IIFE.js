@@ -1,6 +1,7 @@
 /*
 - used to assign complex Values to variables 
 - avoid name collision
+- to control variable scope
 */
 const complexVar = (() => {
   const a = 10;

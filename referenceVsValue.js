@@ -1,4 +1,3 @@
-
 /* types in javascript */
 /* 1: value types => copied by value
 number
