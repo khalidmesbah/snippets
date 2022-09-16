@@ -1,5 +1,6 @@
 /* 
 - it can be used to generate id or random numbers or a sequence of numbers
+- returns an iterable
 */
 function* gen() { // generate sequence of numbers
   let n = 0;

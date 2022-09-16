@@ -1,4 +1,5 @@
 /* Temporal dead zone
+- the area where a variable isn't accessible 
 - the period when the variable is declared(named in the memory) but not assigned to a value
 - variables declared with let and const are stored in it in the creation phase
 */

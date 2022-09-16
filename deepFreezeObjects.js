@@ -15,5 +15,5 @@ const object = {
 deepFreeze(object);
 
 object.age[1] = 2335
-
+    
 console.log(object)

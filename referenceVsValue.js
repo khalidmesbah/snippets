@@ -1,3 +1,8 @@
+/* 
+primitive data types => stored in the stack
+reference data types => stored in the heap
+*/
+
 /* types in javascript */
 /* 1: value types => copied by value
 number
