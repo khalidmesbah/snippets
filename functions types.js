@@ -1,19 +1,21 @@
 /* Functions In JavaScript
-1 - function statement === function declaration
-2 - function expression
-3 - named function expression
-4 - anonymous function
-5 - arrow function
-6 - callback function 
-7 - factory function
-8 - constructor function
-9 - object's function === methods
-10 - generator function
-11 - higher order function
-12 - lambda function
-13 - function factory
-14 - pure function
-15 - template literal function
+01 - function statement === function declaration === function definition
+02 - function expression
+03 - immediately invoked function expression === self invoked function expression
+04 - named function expression
+05 - anonymous function
+06 - arrow function
+07 - callback function 
+08 - factory function
+09 - constructor function
+10 - object's function === methods
+11 - generator function
+12 - higher order function
+13 - lambda function
+14 - function factory
+15 - pure function
+16 - template literal function
+17 - closures
 - arrow function : always an anonymous function ,doesn't create its own execution context
 - lambda functions:-
 -- anonymous functions

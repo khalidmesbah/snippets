@@ -352,3 +352,11 @@ if("name" in shorthandObj)console.log('yes');
 if(name in shorthandObj)console.log('yes2');
 /* ===
 if(shorthandObj.name != null) console.log(`yes 3`) */
+
+
+/* computed property names */
+const random = () => Math.random().toString(36).slice(-5);
+const objjj = {
+  [random()]: true,
+};
+console.log(objjj);

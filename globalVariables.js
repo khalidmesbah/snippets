@@ -4,7 +4,7 @@ function f() {
     console.log(x, y);
 }
 function f2() {
-    var z = 100; // global variable - global scope
+    var z = 100; // local variable - local scope
     console.log(x, z);
 }
 f();

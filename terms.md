@@ -7,4 +7,6 @@
 - template literal functions: function``
 - loop labels: loop1:for(let i=0;i<2;i++){}
 - wild card/asterisk: *
+- Interpreted Language: The language is read by a runtime and executed on the spot and errors are found on execution
+- superset: A language that extends or builds on top of another language or standard.
 - 

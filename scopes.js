@@ -3,6 +3,16 @@
 - module scope
 - function scope / local scope
 - block scope
+- lexical scope
+- 
+*/
+
+/* the glossary
+- undeclared variables are global variables
+- variables declared with var are function/local scope
+- variables declared with let/const are block scope
+
+
 */
 
 /* where you can access a specific function or a variable in the call

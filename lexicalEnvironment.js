@@ -1,4 +1,5 @@
 /* 
+- any thing inside a braces
 Lexical Environment: Local Memory + Lexical Environment of its Parent
 A lexical environment is a data structure that holds identifier-variable mapping.
 Lexical in general means in hierarchy or in a sequence.
