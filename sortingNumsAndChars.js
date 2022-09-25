@@ -22,7 +22,7 @@ function reverseAlphabeticalOrder(arr) {
 }
 
 let chars = ["c", "a", "d", "b", "z", "Z"];
-let nums = [1, 5, 2, 4, 3];
+let nums = [1, 5, 2, 4, 3]; // the array is sorted as a string
 
 console.log("==>original");
 console.log(nums)

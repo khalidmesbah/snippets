@@ -33,7 +33,7 @@ console.log(ducky.getHatchedEggCount());
 /* abstraction */
 function closureFunction() {
     var x = 0;
-    function increment() {
+    function increment() { 
         x++;
     }
     function decrement() {

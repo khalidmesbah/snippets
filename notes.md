@@ -4,3 +4,4 @@
 - undefined === null => false
 - javascript objects are maps
 - this === self === window === frames === globalThis
+- + operates on strings & numbers so [1,2]+ [3,4] === 1,23,4 => if not a string | a number it tries to convert it to a string | number

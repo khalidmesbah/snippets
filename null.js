@@ -2,8 +2,8 @@ console.log(null);
 console.log(-null);
 console.log(+null);
 
-console.log(null === undefined);
-console.log(null == undefined);
+console.log(null === undefined); // false
+console.log(null == undefined); // true
 
 /* null
 - no value

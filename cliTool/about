@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+console.log("My name is Khaled Mesbah")
+console.log("I am a frontend engineer")
+console.log("I code for fun & food")
+console.log("I love making things")
+
