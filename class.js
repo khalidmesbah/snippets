@@ -1,6 +1,8 @@
 /* Notes
 - Must call super constructor in derived class before accessing 'this' or returning from derived constructor
- 
+- if a method is acting like a property use get
+- if a method changes some thing in the class use set
+- you can't make a getter with same name as a property
  */
 class Book {
   constructor(author) {

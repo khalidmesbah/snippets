@@ -341,18 +341,16 @@ Bird.prototype.fly = function() {
 const name = "khaled";
 const country = "egypt";
 const shorthandObj = {
-  name, 
+  name,
   country,
 };
 console.log(shorthandObj);
 
-
 /* in keyword */
-if("name" in shorthandObj)console.log('yes');
-if(name in shorthandObj)console.log('yes2');
+if ("name" in shorthandObj) console.log("yes");
+if (name in shorthandObj) console.log("yes2");
 /* ===
 if(shorthandObj.name != null) console.log(`yes 3`) */
-
 
 /* computed property names */
 const random = () => Math.random().toString(36).slice(-5);
@@ -360,3 +358,23 @@ const objjj = {
   [random()]: true,
 };
 console.log(objjj);
+
+/* Object.create VS Object.assign */
+console.log(`---------------->Object.create VS Object.assign`)
+const testObject = {
+  name: "khalid",
+  id: 1,
+  greet() {
+    console.log(`hi`);
+  },
+};
+const assignedObject = Object.assign({}, testObject); // creates a copy of an object
+const createdObject = Object.create(testObject);
+testObject.lolo = 'lolo'
+testObject.id = 2;
+testObject.beeb = function (){
+  console.log(beeb)
+}
+console.log(`🚀 ~ testObject`, testObject);
+console.log(`🚀 f~ assignedObject`, assignedObject.beeb);
+console.log(`🚀 ~ createdObject`, createdObject.beeb);

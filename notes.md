@@ -5,3 +5,5 @@
 - javascript objects are maps
 - this === self === window === frames === globalThis
 - + operates on strings & numbers so [1,2]+ [3,4] === 1,23,4 => if not a string | a number it tries to convert it to a string | number
+- () is a grouping operator and is evaluated before execution
+-  || returns the first truthy value i.e. obj.foo which is a plain function foo({console.log(this.msg)}

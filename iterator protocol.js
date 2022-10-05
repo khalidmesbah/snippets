@@ -1,3 +1,10 @@
+/* NOTES
+- iterator: built-in object in several data types
+- ex: arrays, strings, maps, sets, nodeLists are built-in iterator
+- iterator: an object that will give you back conten...
+- objects don't have iterators
+- we can use for of loop in iterators
+*/
 /* let str = "khaled";
 const iterator = str[Symbol.iterator]();
 console.log(iterator.next());
@@ -58,3 +65,47 @@ arr[Symbol.iterator] = function () {
 };
 
 for (const e of arr) console.log(e);
+
+console.log(`------------------------------------`);
+const obj = {
+  name: "khaled",
+  age: 21,
+  things: "things",
+  anyThing: "anyThing",
+  [Symbol.iterator]: function () {
+    const props = Object.keys(this);
+    const length = props.length;
+    let counter = 0;
+    return {
+      next: () => {
+        if (counter === length) return { value: undefined, done: true };
+        else return { value: this[props[counter++]], done: false };
+      },
+    };
+  },
+};
+
+for (const v of obj) console.log(v);
+
+let data = obj[Symbol.iterator]();
+console.log(data.next());
+console.log(data.next());
+console.log(data.next());
+console.log(data.next());
+console.log(data.next());
+console.log(data.next());
+
+console.log(`------------------------------------`);
+const arrr = [1,2,3,4,5,6,7,8]
+const ite = arrr[Symbol.iterator]();
+console.log(ite)
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+console.log(ite.next())
+for(const v of arrr) console.log(v)
