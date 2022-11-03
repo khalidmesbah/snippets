@@ -14,7 +14,7 @@
 13 - lambda function
 14 - function factory
 15 - pure function
-16 - template literal function
+16 - template literal function === tag function
 17 - closures
 18 - function decorator
 19 - currying function
@@ -105,7 +105,19 @@ console.log(test.walk());
 /* the best functions are those with no parameters */
 
 /* pure function => the building block of functional programming
+- Return the same result if the same arguments are passed in
+// not a pure function because it causes side effects => logging to the console
+const addPrint = (a,b)=>{
+  const sum = a+b;
+  console.log(sum);
+  return sum;
+}
+//
+- Depend solely on the arguments passed into them
+- Do not produce side effects, such as API requests and I/O operations
 - it can't access anything outside it (database,files)
+- it depends solely on the arguments passed to it not to anything outside its scope
+- predictable
 - returns the same output given the same input
 - doesn't cause side effects outside the function's scope(mutate date outside the function or supplied to the function)
 - easier to reason about because their reliability

@@ -18,3 +18,8 @@ console.log(x);
 
 
 // const arr = [...new Array(1000)].map(() => Math.floor(Math.random() * 100));
+
+/* fill the array from 0 to n-1 */
+const n = 10;
+const arrr = [...new Array(n)].map((e,i)=>i);
+console.log(arrr)
