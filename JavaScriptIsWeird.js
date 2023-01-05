@@ -47,5 +47,9 @@ console.log(
 /* more */
 console.log(`<---->`);
 console.log(!NaN + !NaN);
-console.log(NaN != NaN)
-console.log((+))
+console.log(NaN != NaN);
+// console.log((+))
+
+console.log(`<---->`);
+console.log(10_000_000_000 + 1);
+console.log(10_000_000_000 | 0);

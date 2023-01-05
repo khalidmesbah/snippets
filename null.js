@@ -8,6 +8,14 @@ console.log(+null === 0);
 console.log(-null === 0);
 console.log(-null === +null);
 
+console.log(`what ???`);
+console.log(null === 0);
+console.log(null == 0);
+console.log(null > 0);
+console.log(null < 0);
+console.log(null >= 0);
+console.log(null <= 0);
+
 /* null
 - no value
 - object */

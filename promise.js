@@ -1,4 +1,3 @@
-
 /* NOTES
 - a promise is an object
 - catch is used to catch unhandled errors in thens
@@ -62,7 +61,7 @@
 //   .finally(() => console.log(`end`));
 
 /* multiple promises */
-const url1 = `https://jsonplaceholder.typicode.com/todo/30`;
+/* const url1 = `https://jsonplaceholder.typicode.com/todo/30`;
 const url2 = `https://jsonplaceholder.typicode.com/post/20`;
 const allPromises = Promise.all([fetch(url1), fetch(url2)]);
 console.log(allPromises);
@@ -75,11 +74,27 @@ allPromises
     );
   })
   .then((data) => console.log(data))
-  .catch(console.error);
+  .catch(console.error); */
 
 /* Async/Await */
-      // async function f() {
-      //   // return 2;
-      //   return Promise.resolve(2);
-      // } // it will always returns a promise because of 'async'
-      // f().then((res) => console.log(res));
+// async function f() {
+//   // return 2;
+//   return Promise.resolve(2);
+// } // it will always returns a promise because of 'async'
+// f().then((res) => console.log(res));
+
+/* Promise executer syntax */
+let promise = new Promise(
+  /* executer */ (resolve, reject) => {
+    const logic = false;
+    if (logic) resolve("success");
+    reject("failure");
+  }
+);
+/* Promise consumer syntax */
+promise
+  .then(
+    (result) => console.log("result"),
+    (error) => console.log("error")
+  )
+  .catch((error) => console.log(error));
