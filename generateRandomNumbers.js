@@ -5,4 +5,4 @@ function generateRandomNumbers(size, max) {
     return [...randomNumbers];
 }
 
-console.log(generateRandomNumbers(20, 122));
+console.log(generateRandomNumbers(65, 90));
