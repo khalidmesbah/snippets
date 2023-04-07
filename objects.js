@@ -378,3 +378,9 @@ testObject.beeb = function (){
 console.log(`🚀 ~ testObject`, testObject);
 console.log(`🚀 f~ assignedObject`, assignedObject.beeb);
 console.log(`🚀 ~ createdObject`, createdObject.beeb);
+
+
+/* objects vs maps */
+// use maps if the keys are changing
+// objects are optimized to keep a specific shape
+// maps are optimized to change the shape
