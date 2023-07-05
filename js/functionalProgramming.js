@@ -20,6 +20,10 @@ Declare function parameters - any computation inside a function depends only on 
 */
 
 /* pure functions 
+  * the output depends only on the input
+  * don't produce side effects
+  * functional code is stateless (when ever data is created it's never mutated)
+  *
 - same input => same output
 - doesn't cause side effects
 - console.log() => is a side effect

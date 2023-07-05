@@ -3,3 +3,4 @@ console.log(values.filter(Boolean))
 /* ===
 console.log(values.filter(e=>Boolean(e)))
 */
+console.log(`ihiijij`)

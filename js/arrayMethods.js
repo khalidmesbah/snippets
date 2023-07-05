@@ -6,7 +6,8 @@ console.log([1, 2, 3, 4].toString()); // 1,2,3,4
 console.log([1, 2, 3, 4].concat([5, 6, 7, 8])); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 console.log([1, 2, 3, 4].slice(0, 3)); // [ 1, 2, 3 ]
 console.log([1, 2, 3, 4].findIndex((num) => num == 2)); // 1
-console.log([1, 2, 3, 4].at(2)); // 1
+console.log([1, 2, 3, 4].at(2)); // 3
+console.log([1,2,3,4].at(-1)); // 4 => get the last element
 console.log(`========================`);
 console.log(
   [
