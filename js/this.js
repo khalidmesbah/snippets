@@ -1,5 +1,5 @@
 /*  NOTES
-- 
+- this: the owner of the execution context, the one that calls the method
 - this refers to the object that the method is associated with
 - this === current execution context
 - this refers to the object it belongs to
