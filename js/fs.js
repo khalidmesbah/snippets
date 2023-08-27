@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import fs from "fs";
 
 
 /* fs module methods
@@ -34,12 +34,12 @@ import { promises as fs } from "fs";
   *     creates it if it doesn't exist
   */ 
 
-const filename = "t.md";
+const filePath = "t.md";
 const flag = "a+";
 
-const open = async () => {
+const open = async (filePath,flag) => {
   try {
-    return await fs.open(filename, flag);
+    return await fs.promises.open(filePath, flag);
   } catch (err) {
     console.log(err);
   }
@@ -47,7 +47,7 @@ const open = async () => {
 
 const writeFile = async text => {
   try {
-    await fs.writeFile(filename, text);
+    await fs.promises.writeFile(filePath, text);
   } catch (err) {
     console.log(err);
   }
@@ -73,10 +73,10 @@ const read = async text => {
   }
 };
 
-const readFile = async text => {
+const readFile = async filePath => {
   try {
-    const res = await fs.readFile(filename, "utf-8");
-    console.log(res);
+    const res = await fs.promises.readFile(filePath, "utf-8");
+    return res;
   } catch (err) {
     console.log(err);
   }
@@ -84,7 +84,7 @@ const readFile = async text => {
 
 const deleteF = async () => {
   try {
-    await fs.remove(filename);
+    await fs.remove(filePath);
   } catch (err) {
     console.log(err);
   }
@@ -92,8 +92,8 @@ const deleteF = async () => {
 
 const rename = async () =>{
   try{
-    await fs.mkdir('tt')
-    const f = await fs.rename(filename,"tt/"+filename)
+    await fs.promises.mkdir('tt')
+    const f = await fs.promises.rename(filePath,"tt/"+filePath)
   }catch(err){
     console.log(err)
   }
@@ -102,8 +102,8 @@ const rename = async () =>{
 
 const rerename = async () =>{
   try{
-    await fs.rename("tt/"+filename,filename)
-    await fs.rmdir("tt")
+    await fs.promises.rename("tt/"+filePath,filePath)
+    await fs.promises.rmdir("tt")
   }catch(err){
     console.log(err)
   }
